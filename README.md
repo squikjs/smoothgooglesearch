@@ -2,6 +2,8 @@
 **A simple library to get url's from google, as simple as possible.**
 ***
 Sample code to start with 
+---
+Use `npm install smoothgooglesearch` to install the package!
 ```Javascript
 //here we initialise the constants google (which imports the package) and search(which will be used to get url's)
 const google = require('smoothgooglesearch')
