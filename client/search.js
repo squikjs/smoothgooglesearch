@@ -10,7 +10,7 @@ class Search {
     var searchQuery = "https://www.google.com/search?q=" + query;
     return searchQuery;
   }
-  youTube(query) {
+  youtube(query) {
     var searchQuery = "https://www.youtube.com/search?q=" + query;
     return searchQuery;
   }
@@ -37,7 +37,8 @@ class Search {
     var searchQuery = `https://translate.google.com/?q=#view=home&op=translate&sl=${from}&tl=${to}&text=${text}`
     return searchQuery;
   }
-  googlePlaystore(query, categorySearch) {
+  googlePlayStore(query, categorySearch) {
+    if (query.includes(' ')) { query.replace(/ /gi, '%20')}
     let category = categorySearch ? `&c=${categorySearch}` : ' ';
     let q = query ? `${query}` : ' ';
     const categoryList = [
