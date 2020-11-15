@@ -8,5 +8,13 @@
   "keywords": [],
   "author": "squik",
   "license": "ISC",
-  "main": "index.js"
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wildwolf210/smoothgooglesearch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Wildwolf210/smoothgooglesearch/issues"
+  },
+  "homepage": "https://github.com/Wildwolf210/smoothgooglesearch#readme"
 }
