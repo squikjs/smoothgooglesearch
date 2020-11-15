@@ -1,0 +1,12 @@
+{
+  "name": "smoothgooglesearch",
+  "description": "Search google, youtube, google maps, google play store and google translate with this package!",
+  "version": "1.0.1",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "squik",
+  "license": "ISC",
+  "main": "index.js"
+}
