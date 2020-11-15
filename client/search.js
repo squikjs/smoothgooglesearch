@@ -1,6 +1,6 @@
 const languages = require('../data/languages.json');
 const errors = require('../errors/searchError.js');
-
+const {validation} = require('../data/gmailValidField.js')
 class Search {
   constructor(options) {
     this.options = options;
@@ -25,14 +25,10 @@ class Search {
     let checkFrom = languages[from];
     let checkTo = languages[to];
     if (from != 'auto' && checkFrom === undefined) { 
-      const error = errors.searchError('Invalid language code.')
-      console.log(error)
-      process.exit(1)
+      errors.searchError('Invalid language code.')
     }
     if (to != 'auto' && checkTo === undefined) { 
-      const error = errors.searchError('Invalid language code.')
-      console.log(error)
-      process.exit(1)
+      errors.searchError('Invalid language code.')
     }
     var searchQuery = `https://translate.google.com/?q=#view=home&op=translate&sl=${from}&tl=${to}&text=${text}`
     return searchQuery;
@@ -47,11 +43,16 @@ class Search {
       '&c=movies'
     ]
     if (category != ' ' && !categoryList.includes(category)) {
-      const error = errors.searchError('Inavlid category given.')
-      console.log(error)
-      process.exit(1)
+      errors.searchError('Inavlid category given.')
     }
     var searchQuery = `https://play.google.com/store/search?q=${q}${category}`;
+    return searchQuery;
+  }
+  gmail(query) {
+    let field = query ? query : 'inbox';
+    const val = validation(field)
+    if (val === false) errors.searchError('Not a valid field!')
+    var searchQuery = `https://mail.google.com/mail/u/0/#${field}`
     return searchQuery;
   }
 }

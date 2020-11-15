@@ -20,7 +20,8 @@ let mapsurl = search.googleMaps('#textforsearching')
  * @params to - Language to translate to, it will be auto if not specified.
 */
 let translateUrl = search.googleTranslate({text : '#textforsearching', from: 'en', to: 'es'})
-let googlePlayStoreUrl = search.googlePlayStore('#textforsearching', 'apps') //'#category - can be apps, books or movies.'
-console.log(googleUrl, youtubeUrl, mapsurl, translateUrl, googlePlayStoreUrl)
+let googlePlayStoreUrl = search.googlePlayStore('#textforsearching', 'apps') //'#category(`apps` used here) - can be apps, books or movies, if not specified, it will search for all categories.'
+let gmailUrl = search.gmail('inbox') //'#field(`inbox` used here) - gmail field --> inbox, starred, imp, etc.'
+console.log(googleUrl, youtubeUrl, mapsurl, translateUrl, googlePlayStoreUrl, gmailUrl)
 
 ```
