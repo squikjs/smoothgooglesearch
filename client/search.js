@@ -6,19 +6,21 @@ class Search {
     this.options = options;
   }
   google(query) {
-    var querySearch;
-    if (query.includes(' ')) { querySearch = query.replace(/ /gi, '%20')};
-    var searchQuery = "https://www.google.com/search?q=" + querysearch;
+    var querySearch = query;
+    if (query.includes(' ')) { 
+      querySearch = query.replace(/ /gi, '%20')
+    };
+    var searchQuery = "https://www.google.com/search?q=" + querySearch;
     return searchQuery;
   }
   youtube(query) {
-    var querySearch;
+    var querySearch = query;
     if (query.includes(' ')) { querySearch = query.replace(/ /gi, '%20')};
     var searchQuery = "https://www.youtube.com/search?q=" + querySearch;
     return searchQuery;
   }
   googleMaps(query) {
-    var querySearch;
+    var querySearch = query;
     if (query.includes(' ')) { querySearch = query.replace(/ /gi, '%20')};
     var searchQuery = "https://www.google.com/maps?q=" + querySearch;
     return searchQuery;
@@ -35,13 +37,13 @@ class Search {
     if (to != 'auto' && checkTo === undefined) { 
       errors.searchError('Invalid language code.')
     }
-    let text = '';
+    let text = textInitialise;
     if(textInitialise.includes(' ')) { text = textInitialise.replace(/ /gi, '%20')}
     var searchQuery = `https://translate.google.com/?q=#view=home&op=translate&sl=${from}&tl=${to}&text=${text}`
     return searchQuery;
   }
   googlePlayStore(querySearch, categorySearch) {
-    let query = '';
+    let query = querySearch;
     if (querySearch.includes(' ')) { query.replace(/ /gi, '%20')}
     let category = categorySearch ? `&c=${categorySearch}` : ' ';
     let q = query ? `${query}` : ' ';
