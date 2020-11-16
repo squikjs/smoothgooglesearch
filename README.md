@@ -25,3 +25,4 @@ let gmailUrl = search.gmail('inbox') //'#field(`inbox` used here) - gmail field 
 console.log(googleUrl, youtubeUrl, mapsurl, translateUrl, googlePlayStoreUrl, gmailUrl)
 
 ```
+* Check [howTo](https://github.com/Wildwolf210/smoothgooglesearch/blob/master/howTo.md) to discover the features
